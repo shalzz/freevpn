@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-		<meta charset="utf-8" />
+		<meta charSet="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>SelfVPN</title>
 		<meta name="description" content="Self-host your own VPN server" />
@@ -27,15 +26,16 @@ export default function Home() {
 		<link
 			rel="preload"
 			as="image"
-			imagesrcset="https://image.typedream.net/cdn-cgi/image/width=640,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 640w, https://image.typedream.net/cdn-cgi/image/width=750,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 750w, https://image.typedream.net/cdn-cgi/image/width=828,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 828w, https://image.typedream.net/cdn-cgi/image/width=1080,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1080w, https://image.typedream.net/cdn-cgi/image/width=1200,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1200w, https://image.typedream.net/cdn-cgi/image/width=1920,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1920w, https://image.typedream.net/cdn-cgi/image/width=2048,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 2048w, https://image.typedream.net/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 3840w"
-			imagesizes="100vw"
+			imageSrcSet="https://image.typedream.net/cdn-cgi/image/width=640,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 640w, https://image.typedream.net/cdn-cgi/image/width=750,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 750w, https://image.typedream.net/cdn-cgi/image/width=828,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 828w, https://image.typedream.net/cdn-cgi/image/width=1080,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1080w, https://image.typedream.net/cdn-cgi/image/width=1200,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1200w, https://image.typedream.net/cdn-cgi/image/width=1920,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1920w, https://image.typedream.net/cdn-cgi/image/width=2048,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 2048w, https://image.typedream.net/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 3840w"
+			imageSizes="100vw"
 		/>
 		<meta name="next-head-count" content="16" />
-		<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+		<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
 		<link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <div id="__next">
+          {/*
           <button type="button" className="ThemeToggler_switch__UxZcW" tabIndex={-1}>
             <svg
               viewBox="0 0 20 20"
@@ -60,6 +60,7 @@ export default function Home() {
               <path d="M17.293 13.293A8 8 0 0 1 6.707 2.707a8.001 8.001 0 1 0 10.586 10.586z" />
             </svg>
           </button>
+          */}
           <div
             className="typedream content slate-root _1buablx0 _1buablx5"
             style={{ minHeight: "100vh" }}
@@ -199,7 +200,7 @@ export default function Home() {
                         <video
                           playsInline=""
                           loop=""
-                          autoPlay=""
+                          autoPlay="true"
                           muted=""
                           style={{
                             width: "100%",
@@ -1025,9 +1026,9 @@ export default function Home() {
                   <button
                     className="_1paom1l4 _1paom1l1 _1paom1l2"
                     style={{
-                      background: "var(background)",
+                      background: "#fff",
                       color: "#6968F7",
-                      boxShadow: "0 10px 20px -10px var(shadow-modal-color)"
+                      boxShadow: "0 10px 20px -10px rgba(0,0,0,.09)"
                     }}
                     type="button"
                   >

@@ -227,3 +227,9 @@
     transform: rotate(0deg);
   }
 }
+
+.text {
+  font-family: var(--inter-font);
+  font-weight: 200;
+  font-style: italic;
+}

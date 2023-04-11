@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,10 +30,9 @@ export default function Home() {
 		/>
 		<meta name="next-head-count" content="16" />
 		<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
-		<link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
       </Head>
-      <main>
-        <div id="__next">
+      <main className={inter.className} style={inter.style} >
           {/*
           <button type="button" className="ThemeToggler_switch__UxZcW" tabIndex={-1}>
             <svg
@@ -86,12 +84,13 @@ export default function Home() {
                       className="slate-h1 ohgk4r1 ohgk4r0"
                       style={{ width: 700, maxWidth: "min(100%, 700px)" }}
                     >
-                      <span className="_1untytp0">
+                      <span className="_1untytp0" style={inter.style}>
                         Self-deploy your VPN server for low to{" "}
                       </span>
                       <span className="_1untytp0">
                         <span style={{ color: "#B664B0" }}>
                           <span
+                            className={inter.className}
                             style={{
                               backgroundImage:
                                 "linear-gradient(135deg, #6699FF 0%, #FF3366 100%)",
@@ -110,10 +109,10 @@ export default function Home() {
                     </h1>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ width: 700, maxWidth: "min(100%, 700px)"}}
                     >
                       <span className="_1untytp0">
-                        <span style={{ color: "var(text-light)" }}>
+                        <span className={inter.className} style={{ color: "var(text-light)" }}>
                           SelfVPN is a script that automates end-to-end deployment and
                           configuration of a Wireguard VPN server via a cloud shell
                           environment with pre-installed dependencies on various cloud
@@ -148,7 +147,7 @@ export default function Home() {
                           type="button"
                         >
                           <div />
-                          <span className="_1untytp0">
+                          <span className="_1untytp0" style={inter.style}>
                             <strong>Deploy your private VPN in 15 mins</strong>
                           </span>
                         </button>
@@ -935,7 +934,7 @@ export default function Home() {
                 style={{ width: 700, maxWidth: "min(100%, 700px)" }}
               >
                 <span className="_1untytp0">
-                  <span style={{ color: "#ffffff" }}>
+                  <span style={{ color: "#ffffff" }} className={inter.className}>
                     Deploy your own VPN server with exclusive access and control.
                   </span>
                 </span>
@@ -1142,7 +1141,6 @@ export default function Home() {
               <span className="_1untytp0" />
             </p>
           </div>
-        </div>
       </main>
     </>
   )

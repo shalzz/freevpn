@@ -748,7 +748,7 @@ export default function Home() {
                             style={{
                               background: "#6968F7",
                               color: "#ffffff",
-                              boxShadow: "0 10px 20px -10px var(shadow-color-indigo)"
+                              boxShadow: "0 10px 20px -10px var(--shadow-color-indigo)"
                             }}
                             type="button"
                           >
@@ -800,7 +800,7 @@ export default function Home() {
                             style={{
                               background: "#6968F7",
                               color: "#ffffff",
-                              boxShadow: "0 10px 20px -10px var(shadow-color-indigo)"
+                              boxShadow: "0 10px 20px -10px var(--shadow-color-indigo)"
                             }}
                             type="button"
                           >
@@ -948,9 +948,9 @@ export default function Home() {
                   <button
                     className="_1paom1l4 _1paom1l1 _1paom1l2"
                     style={{
-                      background: "#fff",
+                      background: "var(--background)",
                       color: "#6968F7",
-                      boxShadow: "0 10px 20px -10px rgba(0,0,0,.09)"
+                      boxShadow: "0 10px 20px -10px var(--shadow-modal-color)"
                     }}
                     type="button"
                   >
@@ -985,7 +985,7 @@ export default function Home() {
                 minHeight: "auto",
                 width: "100%",
                 maxWidth: "100%",
-                background: "var(background)"
+                background: "var(--background)"
               }}
             >
               <p
@@ -999,7 +999,7 @@ export default function Home() {
                 <span className="_1untytp0">
                   <span
                     style={{
-                      color: "var(text-light)",
+                      color: "var(--text-light)",
                       fontSize: 20,
                       mobileFontSize: 16,
                       lineHeight: "1.4",

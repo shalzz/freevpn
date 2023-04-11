@@ -198,10 +198,10 @@ export default function Home() {
                     >
                       <div contentEditable="false">
                         <video
-                          playsInline=""
-                          loop=""
-                          autoPlay="true"
-                          muted=""
+                          playsInline={true}
+                          loop={true}
+                          autoPlay={true}
+                          muted={true}
                           style={{
                             width: "100%",
                             height: "auto",
@@ -325,12 +325,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt="Amazon Web Services"
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=64,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOmslX4LWUo4ZmUZxUC2eoNymt_icons8-amazon-web-services-64.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=128,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOmslX4LWUo4ZmUZxUC2eoNymt_icons8-amazon-web-services-64.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=64,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOmslX4LWUo4ZmUZxUC2eoNymt_icons8-amazon-web-services-64.png 1x,https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOmslX4LWUo4ZmUZxUC2eoNymt_icons8-amazon-web-services-64.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOmslX4LWUo4ZmUZxUC2eoNymt_icons8-amazon-web-services-64.png"
                             decoding="async"
                             data-nimg={1}
@@ -365,12 +360,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt="Digital Ocean"
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=48,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnJGUGH97t0caI84BCcwobdHF_icons8-digital-ocean-96.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=96,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnJGUGH97t0caI84BCcwobdHF_icons8-digital-ocean-96.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=48,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnJGUGH97t0caI84BCcwobdHF_icons8-digital-ocean-96.png 1x,https://image.typedream.net/cdn-cgi/image/width=96,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnJGUGH97t0caI84BCcwobdHF_icons8-digital-ocean-96.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=96,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnJGUGH97t0caI84BCcwobdHF_icons8-digital-ocean-96.png"
                             decoding="async"
                             data-nimg={1}
@@ -405,12 +395,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt="Google cloud platform"
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=64,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOntb0SkwJlJf4qRLuYmnszlOX_icons8-google-cloud-platform-96.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=128,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOntb0SkwJlJf4qRLuYmnszlOX_icons8-google-cloud-platform-96.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=64,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOntb0SkwJlJf4qRLuYmnszlOX_icons8-google-cloud-platform-96.png 1x,https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOntb0SkwJlJf4qRLuYmnszlOX_icons8-google-cloud-platform-96.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOntb0SkwJlJf4qRLuYmnszlOX_icons8-google-cloud-platform-96.png"
                             decoding="async"
                             data-nimg={1}
@@ -445,12 +430,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt="linode"
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=64,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnvRjyFPUbDcNBFvAWd5wIEF5_icons8-linode-96.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=128,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnvRjyFPUbDcNBFvAWd5wIEF5_icons8-linode-96.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=64,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnvRjyFPUbDcNBFvAWd5wIEF5_icons8-linode-96.png 1x,https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnvRjyFPUbDcNBFvAWd5wIEF5_icons8-linode-96.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOnvRjyFPUbDcNBFvAWd5wIEF5_icons8-linode-96.png"
                             decoding="async"
                             data-nimg={1}
@@ -485,12 +465,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt="openstack"
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=64,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOo2kOYTDPgm9Re2w3IVGJfh4Z_icons8-openstack-96.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=128,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOo2kOYTDPgm9Re2w3IVGJfh4Z_icons8-openstack-96.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=64,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOo2kOYTDPgm9Re2w3IVGJfh4Z_icons8-openstack-96.png 1x,https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOo2kOYTDPgm9Re2w3IVGJfh4Z_icons8-openstack-96.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=128,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LOo2kOYTDPgm9Re2w3IVGJfh4Z_icons8-openstack-96.png"
                             decoding="async"
                             data-nimg={1}
@@ -549,12 +524,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt=""
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=640,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=1080,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=640,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 1x,https://image.typedream.net/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png"
                             decoding="async"
                             data-nimg={1}
@@ -662,12 +632,7 @@ export default function Home() {
                         <div contentEditable="false">
                           <img
                             alt=""
-                            srcSet="
-                                                            https://image.typedream.net/cdn-cgi/image/width=750,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 1x,
-                                                            https://image.typedream.net/cdn-cgi/image/width=1920,
-                                                            quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 2x
-                                                        "
+                            srcSet="https://image.typedream.net/cdn-cgi/image/width=750,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 1x,https://image.typedream.net/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 2x"
                             src="https://image.typedream.net/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png"
                             decoding="async"
                             data-nimg={1}
@@ -946,24 +911,7 @@ export default function Home() {
                 <img
                   alt="background"
                   sizes="100vw"
-                  srcSet="
-                                        https://image.typedream.net/cdn-cgi/image/width=640,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  640w,
-                                        https://image.typedream.net/cdn-cgi/image/width=750,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  750w,
-                                        https://image.typedream.net/cdn-cgi/image/width=828,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  828w,
-                                        https://image.typedream.net/cdn-cgi/image/width=1080,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1080w,
-                                        https://image.typedream.net/cdn-cgi/image/width=1200,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1200w,
-                                        https://image.typedream.net/cdn-cgi/image/width=1920,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1920w,
-                                        https://image.typedream.net/cdn-cgi/image/width=2048,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 2048w,
-                                        https://image.typedream.net/cdn-cgi/image/width=3840,
-                                        quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 3840w
-                                    "
+                  srcSet="https://image.typedream.net/cdn-cgi/image/width=640,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  640w,https://image.typedream.net/cdn-cgi/image/width=750,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  750w,https://image.typedream.net/cdn-cgi/image/width=828,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  828w,https://image.typedream.net/cdn-cgi/image/width=1080,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1080w,https://image.typedream.net/cdn-cgi/image/width=1200,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1200w,https://image.typedream.net/cdn-cgi/image/width=1920,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1920w,https://image.typedream.net/cdn-cgi/image/width=2048,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 2048w,https://image.typedream.net/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 3840w"
                   src="https://image.typedream.net/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png"
                   decoding="async"
                   data-nimg="fill"

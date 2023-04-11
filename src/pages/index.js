@@ -240,17 +240,17 @@ export default function Home() {
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)"}}
             >
               <span className="_1untytp0" />
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)", textAlign: "center" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "center" }}
             >
               <span className="_1untytp0">
                 <span
-                  style={{ color: "var(text-light)", fontSize: 16, mobileFontSize: 16 }}
+                  style={{ color: "var(--text-light)", "--font-size": 16, "--mobile-font-size": 16 }}
                 >
                   Join others in saving recurring costs by leveraging free tier plans of
                   various cloud providers
@@ -259,10 +259,10 @@ export default function Home() {
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)", textAlign: "center" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "center" }}
             >
               <span className="_1untytp0">
-                <span style={{ color: "var(text-light)" }} />
+                <span style={{ color: "var(--text-light)" }} />
               </span>
             </p>
             <div
@@ -273,25 +273,25 @@ export default function Home() {
                 <div
                   className="_1j76umd"
                   style={{
-                    minHeight: "95.18333435058594px",
-                    width: 900,
-                    columnWidth: 900
+                    "--min-height": "95.18333435058594px",
+                    "--width": 900,
+                    "--column-width": 900
                   }}
                 >
                   <div
                     className="slate-column_item _122mapi0"
-                    style={{ width: "20%", widthFloat: "0.2" }}
+                    style={{ "--width": "20%", "--width-float": "0.2" }}
                   >
                     <div
                       className="slate-img _10w3u1b0"
-                      style={{ justifyContent: "center", maxWidth: "min(100%, 700px)" }}
+                      style={{ justifyContent: "center", "--max-width": "min(100%, 700px)" }}
                     >
                       <div
                         className="_10w3u1b1"
                         style={{
-                          width: "51.432096962616846px",
-                          height: "51.432096962616846px",
-                          aspectRatio: "51.432096962616846 / 51.432096962616846",
+                          "--width": "51.432096962616846px",
+                          "--height": "51.432096962616846px",
+                          "--aspectRatio": "51.432096962616846 / 51.432096962616846",
                           overflow: "hidden",
                           position: "relative"
                         }}
@@ -458,7 +458,7 @@ export default function Home() {
             </div>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
@@ -469,28 +469,28 @@ export default function Home() {
               <div className="_1j76um4 _1j76um1">
                 <div
                   className="_1j76umd"
-                  style={{ minHeight: 514, width: 1000, columnWidth: 1000 }}
+                  style={{ "--min-height": 514, "--width": 1000, "--column-width": 1000 }}
                 >
                   <div
                     className="slate-column_item _122mapi0"
                     style={{
-                      width: "55.46052631578953%",
-                      widthFloat: "0.5546052631578953"
+                      "--width": "55.46052631578953%",
+                      "--widthFloat": "0.5546052631578953"
                     }}
                   >
                     <div
                       className="slate-img _10w3u1b0"
                       style={{
                         justifyContent: "flex-start",
-                        maxWidth: "min(100%, 700px)"
+                        "--max-width": "min(100%, 700px)"
                       }}
                     >
                       <div
                         className="_10w3u1b1"
                         style={{
-                          width: "493.03254153160435px",
-                          height: "248.05699745808846px",
-                          aspectRatio: "493.03254153160435 / 248.05699745808846",
+                          "--width": "493.03254153160435px",
+                          "--height": "248.05699745808846px",
+                          "--aspectRatio": "493.03254153160435 / 248.05699745808846",
                           overflow: "hidden",
                           position: "relative"
                         }}
@@ -515,22 +515,22 @@ export default function Home() {
                   <div
                     className="slate-column_item _122mapi0"
                     style={{
-                      width: "44.539473684210506%",
-                      widthFloat: "0.44539473684210507"
+                      "--width": "44.539473684210506%",
+                      "--width-float": "0.44539473684210507"
                     }}
                   >
                     <h3
                       className="slate-h3 ohgk4r3 ohgk4r0"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0">Cloud shell Environment</span>
                     </h3>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0">
-                        <span style={{ color: "var(text-light)" }}>
+                        <span style={{ color: "var(--text-light)" }}>
                           with pre-installed dependencies and everything setup to Just
                           Work
                         </span>
@@ -538,7 +538,7 @@ export default function Home() {
                     </p>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0" />
                       <a
@@ -557,19 +557,19 @@ export default function Home() {
             </div>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
@@ -580,25 +580,25 @@ export default function Home() {
               <div className="_1j76um4 _1j76um1">
                 <div
                   className="_1j76umd"
-                  style={{ minHeight: 514, width: 1000, columnWidth: 1000 }}
+                  style={{ "--min-height": 514, "--width": 1000, "--column-width": 1000 }}
                 >
                   <div
                     className="slate-column_item _122mapi0"
                     style={{
-                      width: "55.656765957446794%",
-                      widthFloat: "0.556567659574468"
+                      "--width": "55.656765957446794%",
+                      "--width-float": "0.556567659574468"
                     }}
                   >
                     <div
                       className="slate-img _10w3u1b0"
-                      style={{ justifyContent: "center", maxWidth: "min(100%, 700px)" }}
+                      style={{ justifyContent: "center", "--max-width": "min(100%, 700px)" }}
                     >
                       <div
                         className="_10w3u1b1"
                         style={{
-                          width: 700,
-                          height: "124.32000000000001px",
-                          aspectRatio: "700 / 124.32000000000001",
+                          "--width": 700,
+                          "--height": "124.32000000000001px",
+                          "--aspectRatio": "700 / 124.32000000000001",
                           overflow: "hidden",
                           position: "relative"
                         }}
@@ -623,13 +623,13 @@ export default function Home() {
                   <div
                     className="slate-column_item _122mapi0"
                     style={{
-                      width: "44.343234042553235%",
-                      widthFloat: "0.4434323404255323"
+                      "--width": "44.343234042553235%",
+                      "--width-float": "0.4434323404255323"
                     }}
                   >
                     <h3
                       className="slate-h3 ohgk4r3 ohgk4r0"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0">
                         Wireguard protocol with clients for every platform
@@ -637,10 +637,10 @@ export default function Home() {
                     </h3>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0">
-                        <span style={{ color: "var(text-light)" }}>
+                        <span style={{ color: "var(--text-light)" }}>
                           The VPN server runs on the Wireguard protocol and has clients
                           for every major platform including iOS, Android, MacOS,
                           Windows and Linux.
@@ -649,7 +649,7 @@ export default function Home() {
                     </p>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0" />
                       <a

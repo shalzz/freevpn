@@ -32,7 +32,7 @@ export default function Home() {
 		<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
 		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
       </Head>
-      <main className={inter.className} style={inter.style} >
+      <main style={{ minHeight: "100vh" }}>
           {/*
           <button type="button" className="ThemeToggler_switch__UxZcW" tabIndex={-1}>
             <svg
@@ -59,31 +59,14 @@ export default function Home() {
             </svg>
           </button>
           */}
-          <div
-            className="typedream content slate-root _1buablx0 _1buablx5"
-            style={{ minHeight: "100vh" }}
-          >
-            <div
-              className="slate-spacer r2ud8k0"
-              style={{ height: 70, width: 700, maxWidth: "min(100%, 700px)" }}
-            />
-            <div
-              className="slate-column _1j76um0"
-              style={{ width: 1400, maxWidth: "min(100%, 1400px)" }}
-            >
+          <div className="typedream content slate-root _1buablx0 _1buablx5" style={inter.style} >
+            <div className="slate-spacer r2ud8k0" style={{ height: 70, width: 700, maxWidth: "min(100%, 700px)" }} />
+
+            <div className="slate-column _1j76um0" style={{ width: 1400, maxWidth: "min(100%, 1400px)" }} >
               <div className="_1j76um4 _1j76um1">
-                <div
-                  className="_1j76umd"
-                  style={{ minHeight: 639, width: 1400, columnWidth: 1400 }}
-                >
-                  <div
-                    className="slate-column_item _122mapi0"
-                    style={{ width: "45.936%", widthFloat: "0.45936" }}
-                  >
-                    <h1
-                      className="slate-h1 ohgk4r1 ohgk4r0"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
-                    >
+              <div className="_1j76umd" style={{ "--min-height": 639, "--width": 1400, "--column-width": 1400 }} >
+                  <div className="slate-column_item _122mapi0" style={{ "--width": "45.936%", "--width-float": 0.45936 }} >
+                    <h1 className="slate-h1 ohgk4r1 ohgk4r0" style={{ "--width": 700, "--max-width": "min(100%, 700px)" }} >
                       <span className="_1untytp0" style={inter.style}>
                         Self-deploy your VPN server for low to{" "}
                       </span>
@@ -109,10 +92,10 @@ export default function Home() {
                     </h1>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)"}}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)"}}
                     >
                       <span className="_1untytp0">
-                        <span className={inter.className} style={{ color: "var(text-light)" }}>
+                        <span className={inter.className} style={{ color: "var(--text-light)" }}>
                           SelfVPN is a script that automates end-to-end deployment and
                           configuration of a Wireguard VPN server via a cloud shell
                           environment with pre-installed dependencies on various cloud
@@ -122,15 +105,15 @@ export default function Home() {
                     </p>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0">
-                        <span style={{ color: "var(text-light)" }} />
+                        <span style={{ color: "var(--text-light)" }} />
                       </span>
                     </p>
                     <div
                       className="slate-button _1paom1l0"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <a
                         href="https://shalzz.gumroad.com/l/self-host-vpn"
@@ -142,7 +125,7 @@ export default function Home() {
                             background:
                               "linear-gradient(135deg, #6699FF 0%, #FF3366 100%)",
                             color: "#ffffff",
-                            boxShadow: "0 10px 20px -10px var(shadow-color-nebula)"
+                            boxShadow: "0 10px 20px -10px var(--shadow-color-nebula)"
                           }}
                           type="button"
                         >
@@ -155,11 +138,7 @@ export default function Home() {
                     </div>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{
-                        width: 700,
-                        maxWidth: "min(100%, 700px)",
-                        textAlign: "center"
-                      }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "center" }}
                     >
                       <span className="_1untytp0">
                         <span />
@@ -167,15 +146,11 @@ export default function Home() {
                     </p>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{
-                        width: 700,
-                        maxWidth: "min(100%, 700px)",
-                        textAlign: "left"
-                      }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "left" }}
                     >
                       <span className="_1untytp0">
                         <strong>
-                          <span style={{ color: "var(text-light)" }}>
+                          <span style={{ color: "var(--text-light)" }}>
                             {" "}
                             ★★★★★ 5 / 5 Rating (From 1 user)
                           </span>
@@ -185,7 +160,7 @@ export default function Home() {
                   </div>
                   <div
                     className="slate-column_item _122mapi0"
-                    style={{ width: "54.064%", widthFloat: "0.54064" }}
+                    style={{ "--width": "54.064%", "--width-float": "0.54064" }}
                   >
                     <div
                       className="slate-media_embed _ce31d758 _1h3aayo0"
@@ -217,7 +192,7 @@ export default function Home() {
                     </div>
                     <p
                       className="slate-p _1vo7q450"
-                      style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+                      style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
                     >
                       <span className="_1untytp0" />
                     </p>
@@ -227,19 +202,19 @@ export default function Home() {
             </div>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}
             >
               <span className="_1untytp0" />
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)", textAlign: "center" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "center" }}
             >
               <span className="_1untytp0">
                 <span />
@@ -247,16 +222,16 @@ export default function Home() {
             </p>
             <p
               className="slate-p _1vo7q450"
-              style={{ width: 700, maxWidth: "min(100%, 700px)", textAlign: "center" }}
+              style={{ "--width": 700, "--max-width": "min(100%, 700px)", textAlign: "center" }}
             >
               <span className="_1untytp0">
                 <span
                   style={{
-                    color: "var(text-sharp)",
-                    fontSize: 20,
-                    mobileFontSize: 16,
-                    lineHeight: "1.4",
-                    mobileLineHeight: 21
+                    color: "var(--text-sharp)",
+                    "--font-size": 20,
+                    "--mobile-font-size": 16,
+                    "--line-height": "1.4",
+                    "--mobile-line-height": 21
                   }}
                 >
                   Support for 10+ cloud providers

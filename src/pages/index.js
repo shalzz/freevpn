@@ -885,8 +885,7 @@ export default function Home() {
                 <img
                   alt="background"
                   sizes="100vw"
-                  srcSet="https://image.typedream.com/cdn-cgi/image/width=640,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  640w,https://image.typedream.com/cdn-cgi/image/width=750,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  750w,https://image.typedream.com/cdn-cgi/image/width=828,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png  828w,https://image.typedream.com/cdn-cgi/image/width=1080,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1080w,https://image.typedream.com/cdn-cgi/image/width=1200,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1200w,https://image.typedream.com/cdn-cgi/image/width=1920,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 1920w,https://image.typedream.com/cdn-cgi/image/width=2048,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 2048w,https://image.typedream.com/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png 3840w"
-                  src="https://image.typedream.com/cdn-cgi/image/width=3840,quality=100/https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png"
+                  src="https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png"
                   decoding="async"
                   data-nimg="fill"
                   className=""

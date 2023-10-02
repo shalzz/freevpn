@@ -31,6 +31,7 @@ export default function Home() {
 		<meta name="next-head-count" content="16" />
 		<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
 		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
+                <script defer data-domain="selfvpn.8bitlabs.tech" src="https://plausible.8bitlabs.tech/js/script.js"></script>
       </Head>
       <main style={{ minHeight: "100vh" }}>
           {/*

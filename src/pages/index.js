@@ -31,7 +31,12 @@ export default function Home() {
 		<meta name="next-head-count" content="16" />
 		<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
 		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
-                <script defer data-domain="selfvpn.8bitlabs.dev" src="https://plausible.8bitlabs.dev/js/script.js"></script>
+                <script async src="https://plausible.8bitlabs.dev/js/pa-BXanW-yLwa9hBAUCIl7dj.js"></script>
+                <script>
+                  window.plausible=window.plausible||function(){(plausible.q = plausible.q || []).push(arguments)},plausible.init=plausible.init||function(i){plausible.o = i || {}};
+                  plausible.init()
+                </script>
+
       </Head>
       <main style={{ minHeight: "100vh" }}>
           {/*

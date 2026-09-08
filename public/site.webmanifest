@@ -1,0 +1,16 @@
+{
+  "name": "SelfVPN",
+  "short_name": "SelfVPN",
+  "description": "Deploy your own private WireGuard VPN server on a cloud provider of your choice.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#5E5DF0",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

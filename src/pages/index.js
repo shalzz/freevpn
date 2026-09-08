@@ -8,20 +8,28 @@ export default function Home() {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>SelfVPN — Own your VPN. No provider logs, no $12/mo.</title>
         <meta name="description" content="SelfVPN deploys a private WireGuard server you control on a cloud provider of your choice. Your traffic never passes through a commercial VPN's logs." />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" href="https://selfvpn.typedream.app/images/logo@100.png" />
-        <meta property="og:url" content="https://selfvpn.8bitlabs.tech/" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://selfvpn.8bitlabs.dev/" />
+        <meta property="og:url" content="https://selfvpn.8bitlabs.dev/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="SelfVPN" />
-        <meta property="og:description" content="Self-host your own VPN server" />
+        <meta property="og:title" content="SelfVPN — Own your VPN. No provider logs, no $12/mo." />
+        <meta property="og:description" content="SelfVPN deploys a private WireGuard server you control on a cloud provider of your choice. Your traffic never passes through a commercial VPN's logs." />
         <meta property="og:site_name" content="SelfVPN" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image" content="https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png" />
+        <meta property="og:image:alt" content="SelfVPN - Deploy your own private WireGuard VPN server" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@8bitlabs" />
-        <meta name="twitter:title" content="SelfVPN" />
-        <meta name="twitter:description" content="Self-host your own VPN server" />
+        <meta name="twitter:creator" content="@8bitlabs" />
+        <meta name="twitter:title" content="SelfVPN — Own your VPN. No provider logs, no $12/mo." />
+        <meta name="twitter:description" content="SelfVPN deploys a private WireGuard server you control on a cloud provider of your choice. Your traffic never passes through a commercial VPN's logs." />
+        <meta name="twitter:image" content="https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png" />
         <link
           rel="preload"
           as="image"
@@ -31,13 +39,36 @@ export default function Home() {
         <meta name="next-head-count" content="16" />
         <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script defer data-domain="selfvpn.8bitlabs.dev" src="https://plausible.8bitlabs.dev/js/script.js"></script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "SelfVPN",
+            "description": "SelfVPN deploys a private WireGuard server you control on a cloud provider of your choice. Your traffic never passes through a commercial VPN's logs.",
+            "url": "https://selfvpn.8bitlabs.dev/",
+            "image": "https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png",
+            "brand": { "@type": "Brand", "name": "SelfVPN" },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://shalzz.gumroad.com/l/self-host-vpn",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "USD"
+            }
+          })
+        }} />
       </Head>
       <main style={{ minHeight: "100vh" }}>
         <div className="typedream content slate-root _1buablx0 _1buablx5" style={inter.style}>
           <div className="slate-spacer r2ud8k0" style={{ height: 70, width: 700, maxWidth: "min(100%, 700px)" }} />
 
-          <div className="slate-column _1j76um0" style={{ width: 1400, maxWidth: "min(100%, 1400px)" }}>
+          <header className="slate-column _1j76um0" style={{ width: 1400, maxWidth: "min(100%, 1400px)" }}>
             <div className="_1j76um4 _1j76um1">
               <div className="_1j76umd" style={{ "--min-height": 639, "--width": 1400, "--column-width": 1400 }}>
                 <div className="slate-column_item _122mapi0" style={{ "--width": "45.936%", "--width-float": 0.45936 }}>
@@ -149,8 +180,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </header>
 
+          <section aria-label="Supported cloud providers">
           <p className="slate-p _1vo7q450" style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}>
             <span className="_1untytp0" />
           </p>
@@ -234,11 +266,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </section>
 
           <p className="slate-p _1vo7q450" style={{ "--width": 700, "--max-width": "min(100%, 700px)" }}>
             <span className="_1untytp0" />
           </p>
 
+          <section aria-label="SelfVPN features">
           <div className="slate-column _1j76um0" style={{ width: 1000, maxWidth: "min(100%, 1000px)" }}>
             <div className="_1j76um4 _1j76um1">
               <div className="_1j76umd" style={{ "--min-height": 514, "--width": 1000, "--column-width": 1000 }}>
@@ -246,7 +280,7 @@ export default function Home() {
                   <div className="slate-img _10w3u1b0" style={{ justifyContent: "flex-start", "--max-width": "min(100%, 700px)" }}>
                     <div className="_10w3u1b1" style={{ "--width": "493.03254153160435px", "--height": "248.05699745808846px", "--aspectRatio": "493.03254153160435 / 248.05699745808846", overflow: "hidden", position: "relative" }}>
                       <div contentEditable="false">
-                        <img alt="" srcSet="https://image.typedream.com/cdn-cgi/image/width=640,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 1x,https://image.typedream.com/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 2x" src="https://image.typedream.com/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png" decoding="async" data-nimg={1} className="_10w3u1b2" loading="lazy" style={{ color: "transparent" }} width={493} height={248} />
+                        <img alt="SelfVPN cloud-shell terminal screenshot" srcSet="https://image.typedream.com/cdn-cgi/image/width=640,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 1x,https://image.typedream.com/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png 2x" src="https://image.typedream.com/cdn-cgi/image/width=1080,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPMwc4P6tuuycB5Y44tKQdI2nr_Screenshot_from_2022-11-22_18-14-30-cropped.png" decoding="async" data-nimg={1} className="_10w3u1b2" loading="lazy" style={{ color: "transparent" }} width={493} height={248} />
                       </div>
                     </div>
                   </div>
@@ -291,7 +325,7 @@ export default function Home() {
                   <div className="slate-img _10w3u1b0" style={{ justifyContent: "center", "--max-width": "min(100%, 700px)" }}>
                     <div className="_10w3u1b1" style={{ "--width": 700, "--height": "124.32000000000001px", "--aspectRatio": "700 / 124.32000000000001", overflow: "hidden", position: "relative" }}>
                       <div contentEditable="false">
-                        <img alt="" srcSet="https://image.typedream.com/cdn-cgi/image/width=750,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 1x,https://image.typedream.com/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 2x" src="https://image.typedream.com/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png" decoding="async" data-nimg={1} className="_10w3u1b2" loading="lazy" style={{ color: "transparent" }} width={700} height={124} />
+                        <img alt="WireGuard VPN protocol logo" srcSet="https://image.typedream.com/cdn-cgi/image/width=750,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 1x,https://image.typedream.com/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png 2x" src="https://image.typedream.com/cdn-cgi/image/width=1920,quality=100/https://api.typedream.com/v0/document/public/d305e120-ec34-4df8-a081-0944c171e4dc/2LPj6UvbKDk9Abbc8zAViceKaIS_wireguard.png" decoding="async" data-nimg={1} className="_10w3u1b2" loading="lazy" style={{ color: "transparent" }} width={700} height={124} />
                       </div>
                     </div>
                   </div>
@@ -314,15 +348,14 @@ export default function Home() {
                     </a>
                     <span className="_1untytp0" />
                   </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <p className="slate-p _1vo7q450" style={{ width: 700, maxWidth: "min(100%, 700px)" }}>
-            <span className="_1untytp0" />
-          </p>
 
+          <section aria-label="Security and convenience features">
           <div
             role="none"
             className="mobile:hidden desktop:hidden _1bgwy4x2 slate-container _1bgwy4x9 _1bgwy4x0"
@@ -394,14 +427,13 @@ export default function Home() {
               <span className="_1untytp0" />
             </p>
           </div>
+          </section>
 
           <p className="slate-p _1vo7q450" style={{ width: 700, maxWidth: "min(100%, 700px)" }}>
             <span className="_1untytp0" />
           </p>
-          <p className="slate-p _1vo7q450" style={{ width: 700, maxWidth: "min(100%, 700px)" }}>
-            <span className="_1untytp0" />
-          </p>
 
+          <section aria-label="Get started">
           <div role="none" className="_1bgwy4x2 card slate-container _1bgwy4x9 _1bgwy4x0" style={{ minHeight: 303, width: 900, maxWidth: "min(100%, 900px)" }}>
             <div className="_1bgwy4xb" contentEditable="false">
               <img alt="background" sizes="100vw" src="https://typedream.sfo3.digitaloceanspaces.com/illustrations/gradients/gradient-1.png" decoding="async" data-nimg="fill" className="" style={{ position: "absolute", height: "100%", width: "100%", left: 0, top: 0, right: 0, bottom: 0, objectFit: "cover", objectPosition: "center", color: "transparent" }} />
@@ -434,6 +466,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+          </section>
 
           <p className="slate-p _1vo7q450" style={{ width: 700, maxWidth: "min(100%, 700px)" }}>
             <span className="_1untytp0" />
@@ -445,6 +478,7 @@ export default function Home() {
             <span className="_1untytp0" />
           </p>
 
+          <article aria-label="About SelfVPN">
           <div role="none" className="_1bgwy4x2 slate-container _1bgwy4x9 _1bgwy4x0" style={{ minHeight: "auto", width: "100%", maxWidth: "100%", background: "var(--background)" }}>
             <p className="slate-p _1vo7q450" style={{ width: 700, maxWidth: "min(100%, 700px)", textAlign: "center" }}>
               <span className="_1untytp0">
@@ -508,10 +542,13 @@ export default function Home() {
               <span className="_1untytp0">- Anyone comfortable running a script in a cloud shell (AI assistants like ChatGPT or Claude can walk you through each step)</span>
             </p>
           </div>
+          </article>
 
+          <footer>
           <div className="slate-divider c7sewk0" style={{ maxWidth: "100%", width: 1700 }}>
             <hr className="c7sewk1" contentEditable="false" />
           </div>
+          </footer>
         </div>
       </main>
     </>

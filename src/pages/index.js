@@ -57,7 +57,7 @@ export default function Home() {
             },
             "offers": {
               "@type": "Offer",
-              "url": "https://shalzz.gumroad.com/l/self-host-vpn",
+              "url": "/login",
               "availability": "https://schema.org/InStock",
               "priceCurrency": "USD"
             }
@@ -90,7 +90,7 @@ export default function Home() {
                   SelfVPN deploys a private <strong className="font-bold">WireGuard</strong> server <em>you</em> control on a cloud provider of your choice. Your traffic never passes through a commercial VPN's logs — because there's no VPN company in the middle.
                 </p>
                 <div className="w-full py-[4px]">
-                  <a href="https://shalzz.gumroad.com/l/self-host-vpn" rel="noreferrer" className="block">
+                  <a href="/login" className="block">
                     <button
                       type="button"
                       style={{
@@ -235,7 +235,7 @@ export default function Home() {
                     Pre-installed dependencies, everything set up to Just Work. You run one script; the VPN is yours.
                   </p>
                   <p className="w-full py-[4px] text-[16px] leading-[1.5]">
-                    <a href="https://shalzz.gumroad.com/l/self-host-vpn" rel="noreferrer" target="_blank" className="no-underline text-accent hover:underline">
+                    <a href="/login" className="no-underline text-accent hover:underline">
                       Learn more -&gt;
                     </a>
                   </p>
@@ -294,7 +294,7 @@ export default function Home() {
                 It takes less than 15 minutes.
               </p>
               <div className="relative z-10 flex w-full max-w-[700px] py-[4px]">
-                <a href="https://shalzz.gumroad.com/l/self-host-vpn" rel="noreferrer" className="block">
+                <a href="/login" className="block">
                   <button
                     type="button"
                     style={{ background: "#ffffff", color: "#6968F7", boxShadow: "0 10px 20px -10px rgba(0, 0, 0, 0.09)" }}

@@ -68,7 +68,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-start">
           <div className="h-[70px]" />
 
-          <header className="w-full">
+          <header className="w-full max-md:px-5">
             <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-center md:flex-row md:items-stretch md:justify-start">
               <div className="flex w-full flex-col items-start justify-center py-[20px] md:w-[45.936%]">
                 <h1 className="w-full py-[28px] text-left text-[40px] font-extrabold leading-[1.1] tracking-[-2.5px] md:text-[56px] md:leading-[1.125]">
@@ -127,7 +127,7 @@ export default function Home() {
             </div>
           </header>
 
-          <section aria-label="Supported cloud providers" className="w-full">
+          <section aria-label="Supported cloud providers" className="w-full max-md:px-5">
             <div className="mx-auto flex w-full max-w-[900px] flex-col items-center">
               <p className="w-full py-[4px] text-center text-[16px] leading-[21px] text-ink md:text-[20px] md:leading-[1.4]">
                 Support for 10+ cloud providers
@@ -210,7 +210,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section aria-label="SelfVPN features" className="w-full">
+          <section aria-label="SelfVPN features" className="w-full max-md:px-5">
             <div className="mx-auto flex w-full max-w-[1000px] flex-col items-center">
               <div className="flex w-full flex-col items-center justify-center md:flex-row md:flex-wrap md:items-center md:justify-center">
                 <div className="flex w-full flex-col items-center justify-center px-[15px] py-[20px] md:w-[55.46%]">
@@ -276,59 +276,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section aria-label="Security and convenience features" className="w-full">
-            <div className="flex min-h-[490px] w-full flex-col items-center justify-center overflow-hidden bg-black px-[25px] py-[20px]">
-              <h3 className="w-full max-w-[600px] py-[13px] text-center text-[23px] font-bold leading-[1.1] tracking-[-0.5px] text-white md:text-[26px] md:leading-[1.125]">
-                Built with security and ease-of-use in mind
-              </h3>
-
-              <div className="mx-auto w-full max-w-[700px]">
-                <div className="flex w-full flex-col items-center justify-center md:flex-row md:items-center">
-                  <div className="flex w-full flex-col items-center justify-center px-[15px] py-[5px] md:w-1/2 md:py-[20px]">
-                    <div className="flex min-h-[148px] w-[300px] max-w-full flex-col items-center justify-center rounded-[10px] bg-[#303045] px-[25px] py-[20px]" style={{ boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px" }}>
-                      <p className="w-full text-center text-[16px] leading-[1.5] text-white">
-                        <strong className="font-bold">Strong crypto: IKEv2 (AES-GCM, SHA2, P-256) for iOS/macOS/Linux</strong>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex w-full flex-col items-center justify-center px-[15px] py-[5px] md:w-1/2 md:py-[20px]">
-                    <div className="flex min-h-[148px] w-[300px] max-w-full flex-col items-center justify-center rounded-[10px] bg-[#303045] px-[25px] py-[20px]" style={{ boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px" }}>
-                      <p className="w-full text-center text-[16px] leading-[1.5] text-white">
-                        <strong className="font-bold">Auto-generated .conf files + QR codes for every platform</strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mx-auto w-full max-w-[700px]">
-                <div className="flex w-full flex-col items-center justify-center md:flex-row md:items-center">
-                  <div className="flex w-full flex-col items-center justify-center px-[15px] py-[5px] md:w-1/2 md:py-[20px]">
-                    <div className="flex min-h-[148px] w-[300px] max-w-full flex-col items-center justify-center rounded-[10px] bg-[#303045] px-[25px] py-[20px]" style={{ boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px" }}>
-                      <p className="w-full text-center text-[16px] leading-[1.5] text-white">
-                        <strong className="font-bold">One-tap Apple profiles for iOS/macOS — no client app needed</strong>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex w-full flex-col items-center justify-center px-[15px] py-[5px] md:w-1/2 md:py-[20px]">
-                    <div className="flex min-h-[148px] w-[300px] max-w-full flex-col items-center justify-center rounded-[10px] bg-[#303045] px-[25px] py-[20px]" style={{ boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px" }}>
-                      <p className="w-full text-center text-[16px] leading-[1.5] text-white">
-                        <strong className="font-bold">Optional ad-blocking DNS resolver</strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p className="w-full py-[4px] text-center text-[16px] leading-[1.5]">
-                <a href="https://selfvpn.8bitlabs.dev/index.html" rel="noreferrer" className="no-underline hover:underline" style={{ color: "#5E5DF0" }}>
-                  Check the documentation -&gt;
-                </a>
-              </p>
-            </div>
-          </section>
-
-          <section aria-label="Get started" className="w-full">
+          <section aria-label="Get started" className="w-full max-md:px-5">
             <div className="relative mx-auto flex min-h-[303px] w-full max-w-[900px] flex-col items-center justify-center overflow-hidden rounded-[10px] px-[25px] py-[20px]" style={{ boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px" }}>
               <div className="absolute inset-0 overflow-hidden rounded-[10px]">
                 <img
@@ -361,7 +309,7 @@ export default function Home() {
 
           <div className="h-[32px]" />
 
-          <article aria-label="About SelfVPN" className="w-full bg-white">
+          <article aria-label="About SelfVPN" className="w-full bg-white max-md:px-5">
             <div className="mx-auto flex max-w-[700px] flex-col items-center">
               <p className="w-full py-[4px] text-center text-[16px] leading-[21px] text-muted md:text-[20px] md:leading-[1.4]">
                 Why own your VPN server?

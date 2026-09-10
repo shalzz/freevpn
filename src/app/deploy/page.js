@@ -1,15 +1,23 @@
 "use client"
 
-import Head from "next/head"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
-import { useEffect, useState, useCallback } from "react"
-import { useRouter } from "next/router"
+import { Suspense, useCallback, useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import DeployForm from "@/components/DeployForm"
 
 export default function DeployPage() {
-  const { data: session, status } = useSession()
+  return (
+    <Suspense fallback={<div style={{ color: "#8888aa", textAlign: "center", padding: 40 }}>Loading...</div>}>
+      <DeployContent />
+    </Suspense>
+  )
+}
+
+function DeployContent() {
+  const { status } = useSession()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [cloudAccounts, setCloudAccounts] = useState([])
   const [deploying, setDeploying] = useState(false)
 
@@ -28,15 +36,15 @@ export default function DeployPage() {
 
   // Refresh accounts after OAuth callback
   useEffect(() => {
-    if (router.query.connected) {
+    if (searchParams.get("connected")) {
       fetchAccounts()
     }
-  }, [router.query.connected, fetchAccounts])
+  }, [searchParams, fetchAccounts])
 
   if (status === "loading") {
     return (
       <>
-        <Head><title>Deploy — SelfVPN</title></Head>
+        <title>Deploy — SelfVPN</title>
         <main style={{
           minHeight: "100vh",
           display: "flex",
@@ -74,15 +82,13 @@ export default function DeployPage() {
     }
   }
 
-  const errorMsg = router.query.error
-  const connectedMsg = router.query.connected
+  const errorMsg = searchParams.get("error")
+  const connectedMsg = searchParams.get("connected")
 
   return (
     <>
-      <Head>
-        <title>Deploy — SelfVPN</title>
-        <meta name="description" content="Deploy your private WireGuard VPN server." />
-      </Head>
+      <title>Deploy — SelfVPN</title>
+      <meta name="description" content="Deploy your private WireGuard VPN server." />
       <main style={{
         minHeight: "100vh",
         background: "#0a0a0f",

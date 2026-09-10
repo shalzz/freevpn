@@ -1,51 +1,41 @@
+import { cookies } from "next/headers"
+import { NextResponse } from "next/server"
 import { auth } from "@/lib/auth"
-import { prisma } from "@/lib/prisma"
 import { getOAuthConfig } from "@/lib/oauth-providers"
+import { prisma } from "@/lib/prisma"
 
-function parseCookies(cookieHeader) {
-  const cookies = {}
-  cookieHeader?.split(";").forEach((c) => {
-    const [key, ...val] = c.split("=")
-    cookies[key.trim()] = val.join("=").trim()
-  })
-  return cookies
-}
-
-export default async function handler(req, res) {
+export async function GET(req, { params }) {
   const session = await auth()
 
   if (!session) {
-    return res.redirect("/login")
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/login`)
   }
 
-  const { provider } = req.query
-  const { code, state, error } = req.query
+  const { provider } = await params
+  const { searchParams } = new URL(req.url)
+  const code = searchParams.get("code")
+  const state = searchParams.get("state")
+  const error = searchParams.get("error")
   const config = getOAuthConfig(provider)
 
   // Validate provider
   if (!config) {
-    return res.redirect("/deploy?error=unsupported_provider")
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?error=unsupported_provider`)
   }
 
   // Check for OAuth error
   if (error) {
-    return res.redirect(`/deploy?error=oauth_denied`)
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?error=oauth_denied`)
   }
 
   // Validate state (CSRF protection)
-  const cookies = parseCookies(req.headers.cookie)
-  if (state !== cookies.oauth_state || provider !== cookies.oauth_provider) {
-    return res.redirect("/deploy?error=invalid_state")
+  const cookieStore = await cookies()
+  if (state !== cookieStore.get("oauth_state")?.value || provider !== cookieStore.get("oauth_provider")?.value) {
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?error=invalid_state`)
   }
 
-  // Clear OAuth cookies
-  res.setHeader("Set-Cookie", [
-    "oauth_state=; Path=/; Max-Age=0",
-    "oauth_provider=; Path=/; Max-Age=0",
-  ])
-
   if (!code) {
-    return res.redirect("/deploy?error=no_code")
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?error=no_code`)
   }
 
   // Exchange authorization code for access token
@@ -64,7 +54,7 @@ export default async function handler(req, res) {
   if (!tokenResponse.ok) {
     const err = await tokenResponse.text()
     console.error(`OAuth token exchange failed for ${provider}:`, err)
-    return res.redirect("/deploy?error=token_exchange_failed")
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?error=token_exchange_failed`)
   }
 
   const tokenData = await tokenResponse.json()
@@ -102,5 +92,11 @@ export default async function handler(req, res) {
     },
   })
 
-  res.redirect("/deploy?connected=" + provider)
+  const res = NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/deploy?connected=${provider}`)
+
+  // Clear OAuth cookies
+  res.cookies.set("oauth_state", "", { path: "/", maxAge: 0 })
+  res.cookies.set("oauth_provider", "", { path: "/", maxAge: 0 })
+
+  return res
 }

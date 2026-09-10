@@ -1,11 +1,11 @@
-import { auth } from "@/lib/auth"
+import { getToken } from "next-auth/jwt"
 import { NextResponse } from "next/server"
 
-export default auth((req) => {
-  const isLoggedIn = !!req.auth
+export default async function proxy(req) {
+  const token = await getToken({ req, secret: process.env.AUTH_SECRET })
+  const isLoggedIn = !!token
   const isOnAuth = req.nextUrl.pathname.startsWith("/login")
-  const isOnApiAuth = req.nextUrl.pathname.startsWith("/api/auth")
-  const isPublic = req.nextUrl.pathname === "/" || isOnAuth || isOnApiAuth
+  const isPublic = req.nextUrl.pathname === "/" || isOnAuth
 
   if (!isLoggedIn && !isPublic) {
     return NextResponse.redirect(new URL("/login", req.url))
@@ -16,8 +16,8 @@ export default auth((req) => {
   }
 
   return NextResponse.next()
-})
+}
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|site.webmanifest|robots.txt|sitemap.xml).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|site.webmanifest|robots.txt|sitemap.xml).*)"],
 }

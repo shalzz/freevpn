@@ -1,15 +1,12 @@
 "use client"
 
-import Head from "next/head"
 import { signIn } from "next-auth/react"
 
 export default function LoginPage() {
   return (
     <>
-      <Head>
-        <title>Login — SelfVPN</title>
-        <meta name="description" content="Sign in to SelfVPN to deploy your private WireGuard VPN server." />
-      </Head>
+      <title>Login — SelfVPN</title>
+      <meta name="description" content="Sign in to SelfVPN to deploy your private WireGuard VPN server." />
       <main style={{
         minHeight: "100vh",
         display: "flex",

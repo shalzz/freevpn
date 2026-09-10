@@ -98,7 +98,7 @@ export default function DeployForm({ cloudAccounts, onDeploy }) {
     if (!provider) return setError("Select a cloud provider")
     if (!region) return setError("Select a region")
 
-    if (providerConfig.authType === "oauth" && !connectedAccount) {
+    if (providerConfig.authType === "oauth" && !matchedAccount) {
       return setError("Connect your cloud account first")
     }
     if (providerConfig.authType === "apikey" && !apiKey.trim()) {

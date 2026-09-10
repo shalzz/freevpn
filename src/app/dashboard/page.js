@@ -1,6 +1,5 @@
 "use client"
 
-import Head from "next/head"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
 import { useEffect, useState } from "react"
@@ -26,7 +25,7 @@ export default function Dashboard() {
   if (status === "loading" || loading) {
     return (
       <>
-        <Head><title>Dashboard — SelfVPN</title></Head>
+        <title>Dashboard — SelfVPN</title>
         <main style={{
           minHeight: "100vh",
           display: "flex",
@@ -43,10 +42,8 @@ export default function Dashboard() {
 
   return (
     <>
-      <Head>
-        <title>Dashboard — SelfVPN</title>
-        <meta name="description" content="Manage your SelfVPN servers." />
-      </Head>
+      <title>Dashboard — SelfVPN</title>
+      <meta name="description" content="Manage your SelfVPN servers." />
       <main style={{
         minHeight: "100vh",
         background: "#0a0a0f",

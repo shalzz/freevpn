@@ -73,17 +73,16 @@ export default function DeployForm({ cloudAccounts, onDeploy }) {
   const [provider, setProvider] = useState("")
   const [region, setRegion] = useState("")
   const [features, setFeatures] = useState({})
-  const [connectedAccount, setConnectedAccount] = useState(null)
   const [apiKey, setApiKey] = useState("")
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState("")
 
   const providerConfig = PROVIDERS[provider]
+  const matchedAccount = cloudAccounts?.find((a) => a.provider === provider)
 
   function handleProviderChange(e) {
     setProvider(e.target.value)
     setRegion("")
-    setConnectedAccount(null)
     setApiKey("")
     setError("")
   }
@@ -111,12 +110,10 @@ export default function DeployForm({ cloudAccounts, onDeploy }) {
       provider,
       region,
       features,
-      cloudAccountId: connectedAccount?.id || null,
+      cloudAccountId: matchedAccount?.id || null,
       apiKey: providerConfig.authType === "apikey" ? apiKey : null,
     }).finally(() => setSubmitting(false))
   }
-
-  const matchedAccount = cloudAccounts?.find((a) => a.provider === provider)
 
   return (
     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -174,7 +171,7 @@ export default function DeployForm({ cloudAccounts, onDeploy }) {
               </span>
               <button
                 type="button"
-                onClick={() => setConnectedAccount(null)}
+                onClick={() => {}}
                 style={{
                   background: "transparent",
                   color: "#8888aa",

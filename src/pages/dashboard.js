@@ -1,21 +1,43 @@
+"use client"
+
 import Head from "next/head"
-import { useSession } from "next-auth/react"
 import Link from "next/link"
+import { useSession } from "next-auth/react"
+import { useEffect, useState } from "react"
+import ServerCard from "@/components/ServerCard"
 
 export default function Dashboard() {
   const { data: session, status } = useSession()
+  const [servers, setServers] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  if (status === "loading") {
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetch("/api/servers")
+        .then((res) => res.json())
+        .then((data) => {
+          setServers(data)
+          setLoading(false)
+        })
+        .catch(() => setLoading(false))
+    }
+  }, [status])
+
+  if (status === "loading" || loading) {
     return (
-      <main style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#0a0a0f"
-      }}>
-        <p style={{ color: "#8888aa" }}>Loading...</p>
-      </main>
+      <>
+        <Head><title>Dashboard — SelfVPN</title></Head>
+        <main style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#0a0a0f",
+          fontFamily: "Inter, system-ui, sans-serif"
+        }}>
+          <p style={{ color: "#8888aa" }}>Loading...</p>
+        </main>
+      </>
     )
   }
 
@@ -38,9 +60,9 @@ export default function Dashboard() {
             alignItems: "center",
             marginBottom: 40
           }}>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: "#ffffff" }}>
+            <Link href="/" style={{ fontSize: 24, fontWeight: 700, color: "#ffffff", textDecoration: "none" }}>
               SelfVPN
-            </h1>
+            </Link>
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
               <span style={{ color: "#8888aa", fontSize: 14 }}>
                 {session?.user?.email}
@@ -83,20 +105,35 @@ export default function Dashboard() {
             </Link>
           </div>
 
-          <div style={{
-            padding: 60,
-            background: "#12121a",
-            borderRadius: 12,
-            border: "1px solid #1e1e2e",
-            textAlign: "center"
-          }}>
-            <p style={{ color: "#8888aa", fontSize: 16, marginBottom: 8 }}>
-              No servers yet
-            </p>
-            <p style={{ color: "#555577", fontSize: 14 }}>
-              Deploy your first private WireGuard VPN server to get started.
-            </p>
-          </div>
+          {servers.length === 0 ? (
+            <div style={{
+              padding: 60,
+              background: "#12121a",
+              borderRadius: 12,
+              border: "1px solid #1e1e2e",
+              textAlign: "center"
+            }}>
+              <p style={{ color: "#8888aa", fontSize: 16, marginBottom: 8 }}>
+                No servers yet
+              </p>
+              <p style={{ color: "#555577", fontSize: 14 }}>
+                Deploy your first private WireGuard VPN server to get started.
+              </p>
+            </div>
+          ) : (
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {servers.map((server) => (
+                <ServerCard
+                  key={server.id}
+                  server={server}
+                  onDestroy={(id) => {
+                    fetch(`/api/servers/${id}/destroy`, { method: "POST" })
+                      .then(() => setServers((prev) => prev.filter((s) => s.id !== id)))
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </main>
     </>

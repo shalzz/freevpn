@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+bullmq
+redis
+ansible-runner
+boto3
+python-digitalocean
+cryptography

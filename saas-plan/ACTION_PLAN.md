@@ -57,12 +57,12 @@ EOF
 
 1. Create Google OAuth app at https://console.cloud.google.com/apis/credentials
 2. Set redirect URI: `http://localhost:3000/api/auth/callback/google`
-3. Create `src/lib/auth.js` with NextAuth config
-4. Create `src/pages/api/auth/[...nextauth].js`
-5. Create `src/pages/login.js` with "Sign in with Google" button
-6. Create `src/components/AuthProvider.js`
+3. Create `lib/auth.js` with NextAuth config
+4. Create `app/api/auth/[...nextauth]/route.js`
+5. Create `app/login/page.js` with "Sign in with Google" button
+6. Create `components/AuthProvider.js`
 7. Wrap `_app.js` with AuthProvider
-8. Create `src/middleware.js` for route protection
+8. Create `proxy.js` for route protection
 
 **Verify:** Can sign in via Google, session persists, `/dashboard` protected.
 
@@ -72,14 +72,14 @@ EOF
 
 **Duration:** 1 day
 
-1. Create `src/pages/dashboard.js`
+1. Create `app/dashboard/page.js`
    - Fetch user's servers from API
    - Render list with status badges
    - "Deploy New Server" button
-2. Create `src/components/ServerCard.js`
+2. Create `components/ServerCard.js`
    - Shows provider, region, IP, status
    - "Destroy" button
-3. Create `src/pages/api/servers.js`
+3. Create `app/api/servers/route.js`
    - GET: list user's servers
    - Requires authenticated session
 
@@ -91,13 +91,13 @@ EOF
 
 **Duration:** 1 day
 
-1. Create `src/pages/deploy.js`
-2. Create `src/components/DeployForm.js`
+1. Create `app/deploy/page.js`
+2. Create `components/DeployForm.js`
    - Provider dropdown (AWS, GCP, DigitalOcean, Linode, Vultr, Hetzner, Azure)
    - Region dropdown (populated per provider)
    - Feature checkboxes (ad-blocking, SSH tunneling)
    - Cloud account section (OAuth connect or API key input)
-3. Create `src/components/ApiKeyInput.js`
+3. Create `components/ApiKeyInput.js`
    - Text input with validation
    - Encrypt before storing
 
@@ -111,10 +111,10 @@ EOF
 
 1. Create DigitalOcean app at https://cloud.digitalocean.com/account/api/applications
 2. Set callback URL: `http://localhost:3000/api/oauth/digitalocean/callback`
-3. Create `src/pages/api/oauth/[provider].js`
+3. Create `app/api/oauth/[provider]/route.js`
    - Build authorization URL
    - Redirect to DigitalOcean
-4. Create `src/pages/api/oauth/[provider]/callback.js`
+4. Create `app/api/oauth/[provider]/callback/route.js`
    - Exchange code for token
    - Store encrypted in CloudAccount
 5. Wire up deploy form "Connect DigitalOcean" button
@@ -205,7 +205,7 @@ EOF
 
 **Duration:** 1 day
 
-1. Create `src/lib/queue.js`:
+1. Create `lib/queue.js`:
    ```javascript
    import { Queue } from 'bullmq'
    const deployQueue = new Queue('deployments', { connection: { host: 'localhost', port: 6379 } })
@@ -214,7 +214,7 @@ EOF
      return deployQueue.add('deploy', { serverId, provider, region, credentials, features })
    }
    ```
-2. Create `src/pages/api/deploy.js`:
+2. Create `app/api/deploy/route.js`:
    - POST: validate input → create Server record → enqueue job → return 202
 3. Update `worker/main.py` to consume jobs:
    - Receive job → call `run_deployment()` → update Server status → store configs
@@ -229,7 +229,7 @@ EOF
 
 1. After deployment, Algo generates configs in `configs/<IP>/`
 2. Worker copies relevant files to encrypted storage (S3 or local)
-3. Create `src/pages/api/servers/[id]/configs.js`:
+3. Create `app/api/servers/[id]/configs/route.js`:
    - GET: list configs for server
    - GET `?file=wireguard/<user>.conf`: download config
 4. Update dashboard to show config download links and QR codes
@@ -285,13 +285,13 @@ EOF
 1. **AWS:**
    - Create Cognito User Pool or IAM Identity Center
    - Configure OAuth app
-   - Create `src/pages/api/oauth/aws.js` + callback
+   - Create `app/api/oauth/aws/route.js` + callback
    - Worker: exchange Cognito token for STS credentials
 
 2. **GCP:**
    - Create GCP OAuth client
    - Configure Workload Identity Federation
-   - Create `src/pages/api/oauth/gcp.js` + callback
+   - Create `app/api/oauth/gcp/route.js` + callback
    - Worker: exchange token for compute access token
 
 **Verify:** Can connect AWS and GCP accounts, deploy to each.
@@ -302,7 +302,7 @@ EOF
 
 **Duration:** 1 day
 
-1. Create `src/pages/api/servers/[id]/destroy.js`:
+1. Create `app/api/servers/[id]/destroy/route.js`:
    - POST: set status to "destroying" → enqueue destroy job
 2. Create `worker/providers/*/destroy.py`:
    - AWS: `ec2.terminate_instances()`
@@ -336,7 +336,7 @@ EOF
 **Duration:** 0.5 day
 
 1. Add AuditLog model to schema
-2. Create `src/lib/audit.js`:
+2. Create `lib/audit.js`:
    ```javascript
    export async function logAudit(userId, action, details) {
      await prisma.auditLog.create({ data: { userId, action, details } })
@@ -352,7 +352,7 @@ EOF
 
 **Duration:** 0.5 day
 
-1. Create `src/lib/ratelimit.js` using Redis sliding window
+1. Create `lib/ratelimit.js` using Redis sliding window
 2. Apply to:
    - `POST /api/deploy`: 5/hour
    - `POST /api/servers/*/destroy`: 3/hour
@@ -366,7 +366,7 @@ EOF
 
 **Duration:** 0.5 day
 
-1. Update `src/pages/index.js`:
+1. Update `app/page.js`:
    - Replace CTA: "Deploy your private VPN in 15 mins" → "Start Free" → `/login`
    - Remove all Gumroad links
    - Add "Login" link in header

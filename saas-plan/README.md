@@ -145,25 +145,25 @@ Customer cloud costs (VPN server) are billed to their own cloud account.
 
 ```
 freevpn/
-├── src/                          # Next.js app
-│   ├── pages/
-│   │   ├── index.js              # Existing landing page
-│   │   ├── login.js              # Login page
-│   │   ├── dashboard.js          # User dashboard
-│   │   ├── deploy.js             # Deployment form
-│   │   └── api/
-│   │       ├── auth/[...nextauth].js  # NextAuth routes
-│   │       ├── deploy.js         # Trigger deployment
-│   │       ├── servers.js        # List servers
-│   │       └── servers/[id].js   # Server details
-│   ├── components/
-│   │   ├── AuthProvider.js       # Session provider wrapper
-│   │   ├── Navbar.js
-│   │   ├── DeployForm.js
-│   │   └── ServerCard.js
-│   └── lib/
-│       ├── prisma.js             # Prisma client singleton
-│       └── auth.js               # NextAuth config
+├── app/                          # Next.js App Router
+│   ├── page.js                   # Existing landing page
+│   ├── login/page.js             # Login page
+│   ├── dashboard/page.js         # User dashboard
+│   ├── deploy/page.js            # Deployment form
+│   ├── layout.js                 # Root layout + AuthProvider
+│   └── api/
+│       ├── auth/[...nextauth]/route.js  # NextAuth routes
+│       ├── deploy/route.js       # Trigger deployment
+│       ├── servers/route.js      # List servers
+│       └── servers/[id]/route.js # Server details
+├── components/
+│   ├── AuthProvider.js           # Session provider wrapper
+│   ├── Navbar.js
+│   ├── DeployForm.js
+│   └── ServerCard.js
+├── lib/
+│   ├── prisma.js                 # Prisma client singleton
+│   └── auth.js                   # NextAuth config
 ├── worker/                       # Python deployment worker
 │   ├── main.py                   # FastAPI + BullMQ consumer
 │   ├── providers/

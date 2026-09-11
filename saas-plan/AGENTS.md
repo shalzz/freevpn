@@ -100,11 +100,11 @@ model Deployment {
 **Goal:** Set up Google OAuth login with NextAuth v5.
 
 **Files to create:**
-- `src/lib/auth.js`
-- `src/pages/api/auth/[...nextauth].js`
-- `src/pages/login.js`
-- `src/components/AuthProvider.js`
-- `src/pages/_app.js` (modify)
+- `lib/auth.js`
+- `app/api/auth/[...nextauth]/route.js`
+- `app/login/page.js`
+- `components/AuthProvider.js`
+- `app/layout.js` (modify)
 
 **Environment variables:**
 ```
@@ -127,7 +127,7 @@ DATABASE_URL=        # postgres://...
 **Goal:** Protect dashboard, deploy, and API routes.
 
 **Files to create:**
-- `src/middleware.js`
+- `proxy.js`
 
 **Logic:**
 - `/dashboard/*`, `/deploy/*`, `/api/deploy/*`, `/api/servers/*` require session
@@ -147,8 +147,8 @@ DATABASE_URL=        # postgres://...
 **Goal:** Show user's deployed servers and status.
 
 **Files to create:**
-- `src/pages/dashboard.js`
-- `src/components/ServerCard.js`
+- `app/dashboard/page.js`
+- `components/ServerCard.js`
 
 **Features:**
 - List servers with status (running, deploying, failed)
@@ -167,8 +167,8 @@ DATABASE_URL=        # postgres://...
 **Goal:** Form to select cloud provider, region, and features.
 
 **Files to create:**
-- `src/pages/deploy.js`
-- `src/components/DeployForm.js`
+- `app/deploy/page.js`
+- `components/DeployForm.js`
 
 **Form fields:**
 - Cloud provider dropdown (AWS, GCP, DigitalOcean, etc.)
@@ -189,8 +189,8 @@ DATABASE_URL=        # postgres://...
 **Goal:** Implement OAuth authorization for each cloud provider.
 
 **Files to create:**
-- `src/pages/api/oauth/[provider].js` (initiate)
-- `src/pages/api/oauth/[provider]/callback.js` (exchange)
+- `app/api/oauth/[provider]/route.js` (initiate)
+- `app/api/oauth/[provider]/callback/route.js` (exchange)
 
 **Providers to implement (Phase 2):**
 1. DigitalOcean — simplest OAuth, 30-day tokens
@@ -214,7 +214,7 @@ DATABASE_URL=        # postgres://...
 **Goal:** Handle Hetzner, Scaleway, and other providers without OAuth.
 
 **Files to create:**
-- `src/components/ApiKeyInput.js`
+- `components/ApiKeyInput.js`
 
 **Logic:**
 - Text input for API key
@@ -313,7 +313,7 @@ class CloudProvider(ABC):
 **Goal:** Next.js API creates jobs, worker consumes them.
 
 **Files to create:**
-- `src/lib/queue.js` (Next.js side)
+- `lib/queue.js` (Next.js side)
 - `worker/main.py` (modify to consume)
 
 **Flow:**
@@ -335,7 +335,7 @@ Worker picks up job → run algo → update Server status → store configs
 **Goal:** Make VPN configs available to the user after deployment.
 
 **Files to create:**
-- `src/pages/api/servers/[id]/configs.js`
+- `app/api/servers/[id]/configs/route.js`
 
 **Features:**
 - List available configs (WireGuard .conf, QR codes, Apple profiles)
@@ -357,7 +357,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 **Files to create:**
 - `worker/crypto.py`
-- `src/lib/crypto.js`
+- `lib/crypto.js`
 
 **Logic:**
 - Generate data key via KMS `GenerateDataKey`
@@ -397,7 +397,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 **Files to create:**
 - `prisma/schema.prisma` (add AuditLog model)
-- `src/lib/audit.js`
+- `lib/audit.js`
 
 **Events to log:**
 - User login/logout
@@ -417,7 +417,7 @@ Worker picks up job → run algo → update Server status → store configs
 **Goal:** Prevent abuse of deployment endpoints.
 
 **Files to create:**
-- `src/lib/ratelimit.js`
+- `lib/ratelimit.js`
 
 **Limits:**
 - Deploy: 5 per hour per user
@@ -459,7 +459,7 @@ Worker picks up job → run algo → update Server status → store configs
 **Goal:** Users can destroy their VPN servers.
 
 **Files to create/modify:**
-- `src/pages/api/servers/[id]/destroy.js`
+- `app/api/servers/[id]/destroy/route.js`
 - `worker/providers/*/destroy.py`
 
 **Logic:**
@@ -480,7 +480,7 @@ Worker picks up job → run algo → update Server status → store configs
 **Goal:** Update landing page to link to SaaS instead of Gumroad.
 
 **Files to modify:**
-- `src/pages/index.js`
+- `app/page.js`
 
 **Changes:**
 - Replace "Deploy your private VPN in 15 mins" CTA → "Start Free" → `/login`

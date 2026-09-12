@@ -39,3 +39,7 @@ next-env.d.ts
 /worker/.venv/
 /worker/__pycache__/
 /worker/configs/
+/worker/algo/*
+!/worker/algo/__init__.py
+!/worker/algo/config.py
+!/worker/algo/runner.py

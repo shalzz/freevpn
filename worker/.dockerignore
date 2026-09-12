@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+configs/
+algo/.git/
+algo/configs/
+algo/.pytest_cache/
+algo/tests/
+algo/docs/
+*.log

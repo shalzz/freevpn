@@ -6,9 +6,40 @@ ordered by dependency — later tasks depend on earlier ones.
 
 ---
 
+# Task Status
+
+Last updated: 2026-09-12
+
+| Task | Title | Status |
+|------|-------|--------|
+| 1.1 | Upgrade Next.js & Install Dependencies | [x] Done |
+| 1.2 | Database Schema (Prisma) | [x] Done |
+| 1.3 | NextAuth Configuration | [x] Done |
+| 1.4 | Middleware Route Protection | [x] Done |
+| 2.1 | Dashboard Page | [x] Done |
+| 2.2 | Deploy Form Page | [x] Done |
+| 2.3 | Cloud Provider OAuth Flows | [x] Code done (DO + Linode), live E2E pending |
+| 2.4 | API Key Fallback for Non-OAuth Providers | [x] Implemented (KMS encryption deferred to 4.1) |
+| 3.1 | Python Worker Setup | [x] Done |
+| 3.2 | Algo VPN Runner | [x] Code done, live droplet deploy pending |
+| 3.3 | Provider Credential Exchange | [ ] Pending (thin base/registry + DigitalOcean scoped) |
+| 3.4 | Job Queue Integration | [ ] Pending |
+| 3.5 | Config File Delivery | [ ] Pending |
+| 4.1–4.4 | Security & Hardening | [ ] Pending |
+| 5.1–5.5 | Polish & Deploy | [ ] Pending |
+
+## Implementation Notes / Deviations
+
+- Next.js is pinned to **16.3.4** (plan said 15); `transpilePackages: ['next-auth']`
+  workaround in `next.config.js` (CJS).
+- DigitalOcean OAuth credentials wired in `.env.local` / `.env`.
+- Worker runs locally on port **8100** (8000 is taken by Plausible).
+
+---
+
 ## Phase 1: Project Setup & Auth (Week 1-2)
 
-### Task 1.1: Upgrade Next.js & Install Dependencies
+### Task 1.1: Upgrade Next.js & Install Dependencies [x] DONE
 
 **Goal:** Upgrade from Next.js 13 to 15, install all required packages.
 
@@ -34,7 +65,7 @@ ioredis                  # Redis client
 
 ---
 
-### Task 1.2: Database Schema (Prisma)
+### Task 1.2: Database Schema (Prisma) [x] DONE
 
 **Goal:** Define the database schema for users, servers, and deployments.
 
@@ -95,7 +126,7 @@ model Deployment {
 
 ---
 
-### Task 1.3: NextAuth Configuration
+### Task 1.3: NextAuth Configuration [x] DONE
 
 **Goal:** Set up Google OAuth login with NextAuth v5.
 
@@ -122,7 +153,7 @@ DATABASE_URL=        # postgres://...
 
 ---
 
-### Task 1.4: Middleware Route Protection
+### Task 1.4: Middleware Route Protection [x] DONE
 
 **Goal:** Protect dashboard, deploy, and API routes.
 
@@ -142,7 +173,7 @@ DATABASE_URL=        # postgres://...
 
 ## Phase 2: Dashboard & Deploy UI (Week 2-3)
 
-### Task 2.1: Dashboard Page
+### Task 2.1: Dashboard Page [x] DONE
 
 **Goal:** Show user's deployed servers and status.
 
@@ -162,7 +193,7 @@ DATABASE_URL=        # postgres://...
 
 ---
 
-### Task 2.2: Deploy Form Page
+### Task 2.2: Deploy Form Page [x] DONE
 
 **Goal:** Form to select cloud provider, region, and features.
 
@@ -184,7 +215,7 @@ DATABASE_URL=        # postgres://...
 
 ---
 
-### Task 2.3: Cloud Provider OAuth Flows
+### Task 2.3: Cloud Provider OAuth Flows [x] CODE DONE — LIVE E2E PENDING
 
 **Goal:** Implement OAuth authorization for each cloud provider.
 
@@ -209,7 +240,7 @@ DATABASE_URL=        # postgres://...
 
 ---
 
-### Task 2.4: API Key Fallback for Non-OAuth Providers
+### Task 2.4: API Key Fallback for Non-OAuth Providers [x] IMPLEMENTED
 
 **Goal:** Handle Hetzner, Scaleway, and other providers without OAuth.
 
@@ -231,7 +262,7 @@ DATABASE_URL=        # postgres://...
 
 ## Phase 3: Deployment Worker (Week 3-5)
 
-### Task 3.1: Python Worker Setup
+### Task 3.1: Python Worker Setup [x] DONE
 
 **Goal:** Create the Python worker that consumes deployment jobs.
 
@@ -252,7 +283,7 @@ DATABASE_URL=        # postgres://...
 
 ---
 
-### Task 3.2: Algo VPN Runner
+### Task 3.2: Algo VPN Runner [x] CODE DONE — LIVE DEPLOY PENDING
 
 **Goal:** Wrapper around ansible-runner to invoke Algo playbooks.
 
@@ -277,7 +308,7 @@ def run_algo(provider, region, credentials, features):
 
 ---
 
-### Task 3.3: Provider Credential Exchange
+### Task 3.3: Provider Credential Exchange [ ] PENDING — SCOPED TO THIN LAYER + DO
 
 **Goal:** Exchange OAuth tokens for cloud-specific API credentials.
 
@@ -308,7 +339,7 @@ class CloudProvider(ABC):
 
 ---
 
-### Task 3.4: Job Queue Integration
+### Task 3.4: Job Queue Integration [ ] PENDING
 
 **Goal:** Next.js API creates jobs, worker consumes them.
 
@@ -330,7 +361,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 3.5: Config File Delivery
+### Task 3.5: Config File Delivery [ ] PENDING
 
 **Goal:** Make VPN configs available to the user after deployment.
 
@@ -351,7 +382,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ## Phase 4: Security & Hardening (Week 5-6)
 
-### Task 4.1: KMS Envelope Encryption
+### Task 4.1: KMS Envelope Encryption [ ] PENDING
 
 **Goal:** Encrypt cloud credentials at rest using AWS KMS.
 
@@ -372,7 +403,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 4.2: Credential Auto-Expiry
+### Task 4.2: Credential Auto-Expiry [ ] PENDING
 
 **Goal:** Automatically expire and clean up old credentials.
 
@@ -391,7 +422,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 4.3: Audit Logging
+### Task 4.3: Audit Logging [ ] PENDING
 
 **Goal:** Log all deployment actions for security.
 
@@ -412,7 +443,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 4.4: Rate Limiting
+### Task 4.4: Rate Limiting [ ] PENDING
 
 **Goal:** Prevent abuse of deployment endpoints.
 
@@ -432,7 +463,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ## Phase 5: Polish & Deploy (Week 6-8)
 
-### Task 5.1: Error Handling & User Feedback
+### Task 5.1: Error Handling & User Feedback [ ] PENDING
 
 **Goal:** Graceful error handling throughout the app.
 
@@ -454,7 +485,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 5.2: Server Destroy Flow
+### Task 5.2: Server Destroy Flow [ ] PENDING
 
 **Goal:** Users can destroy their VPN servers.
 
@@ -475,7 +506,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 5.3: Landing Page Integration
+### Task 5.3: Landing Page Integration [ ] PENDING
 
 **Goal:** Update landing page to link to SaaS instead of Gumroad.
 
@@ -494,7 +525,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 5.4: Docker Compose for Local Dev
+### Task 5.4: Docker Compose for Local Dev [ ] PENDING
 
 **Goal:** One-command local development setup.
 
@@ -514,7 +545,7 @@ Worker picks up job → run algo → update Server status → store configs
 
 ---
 
-### Task 5.5: CI/CD Pipeline
+### Task 5.5: CI/CD Pipeline [ ] PENDING
 
 **Goal:** Automated testing and deployment.
 

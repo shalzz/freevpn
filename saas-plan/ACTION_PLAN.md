@@ -5,7 +5,56 @@ steps sequentially. Each step produces a working, testable increment.
 
 ---
 
-## Step 1: Project Bootstrap
+# Step Execution Status
+
+Last updated: 2026-09-12
+
+| Step | Title | Status |
+|------|-------|--------|
+| 1 | Project Bootstrap | [x] Done |
+| 2 | Database Schema | [x] Done |
+| 3 | Google OAuth Login | [x] Done |
+| 4 | Dashboard UI | [x] Done |
+| 5 | Deploy Form | [x] Done |
+| 6 | DigitalOcean OAuth | [x] Code done — creds wired, live E2E pending |
+| 7 | Python Worker Skeleton | [x] Done |
+| 8 | Algo VPN Runner | [x] Code done — live droplet deploy pending |
+| 9 | Provider Credential Exchange | [ ] Pending (thin base/registry + DigitalOcean scoped) |
+| 10 | Job Queue Integration | [ ] Pending |
+| 11 | Config File Delivery | [ ] Pending |
+| 12 | KMS Encryption | [ ] Pending |
+| 13 | AWS & GCP OAuth | [ ] Pending |
+| 14 | Server Destroy Flow | [ ] Pending |
+| 15 | Error Handling | [ ] Pending |
+| 16 | Audit Logging | [ ] Pending |
+| 17 | Rate Limiting | [ ] Pending |
+| 18 | Landing Page Update | [ ] Pending |
+| 19 | Docker Compose | [ ] Pending |
+| 20 | CI/CD | [ ] Pending |
+
+## Implementation Notes / Deviations
+
+- **Next.js pinned to `16.3.4`** (plan said 15). It ships no `exports` map, so
+  ESM subpaths like `next/server` don't resolve; workaround is
+  `transpilePackages: ['next-auth']` in `next.config.js` (CJS `module.exports`).
+- **DigitalOcean OAuth credentials are wired** into `.env.local` / `.env`
+  (`DIGITALOCEAN_CLIENT_ID`, `DIGITALOCEAN_CLIENT_SECRET`). Registered
+  redirect URIs:
+  - `https://selfvpn.8bitlabs.dev/api/oauth/digitalocean/callback`
+  - `http://localhost:3000/api/oauth/digitalocean/callback`
+  Scope: `read write`. Live connect flow not yet verified end-to-end.
+- **Port 8000 is taken by Plausible** (running container), so the worker runs
+  locally on **8100**; inside its Docker image uvicorn binds 8000.
+- **Python toolchain**: no system pip/venv (no `uv` on PATH). Worker venv at
+  `worker/.venv` built from uv-managed 3.11 (`/home/dappnode/.local/bin/python3.11`).
+- Container services: `selfvpn-postgres` (Postgres 16, :5432) and
+  `selfvpn-redis` (Redis 7, :6379).
+- Worker env vars: `REDIS_URL` (default `redis://localhost:6379`),
+  `BULLMQ_QUEUE` (default `deployments`).
+
+---
+
+## Step 1: Project Bootstrap [x] DONE
 
 **Duration:** 1 day
 
@@ -39,7 +88,7 @@ EOF
 
 ---
 
-## Step 2: Database Schema
+## Step 2: Database Schema [x] DONE
 
 **Duration:** 0.5 day
 
@@ -51,7 +100,7 @@ EOF
 
 ---
 
-## Step 3: Google OAuth Login
+## Step 3: Google OAuth Login [x] DONE
 
 **Duration:** 1 day
 
@@ -68,7 +117,7 @@ EOF
 
 ---
 
-## Step 4: Dashboard UI
+## Step 4: Dashboard UI [x] DONE
 
 **Duration:** 1 day
 
@@ -87,7 +136,7 @@ EOF
 
 ---
 
-## Step 5: Deploy Form
+## Step 5: Deploy Form [x] DONE
 
 **Duration:** 1 day
 
@@ -105,7 +154,7 @@ EOF
 
 ---
 
-## Step 6: DigitalOcean OAuth (First Provider)
+## Step 6: DigitalOcean OAuth (First Provider) [x] CODE DONE — LIVE E2E PENDING
 
 **Duration:** 1 day
 
@@ -123,7 +172,7 @@ EOF
 
 ---
 
-## Step 7: Python Worker Skeleton
+## Step 7: Python Worker Skeleton [x] DONE
 
 **Duration:** 1 day
 
@@ -149,7 +198,7 @@ EOF
 
 ---
 
-## Step 8: Algo VPN Runner
+## Step 8: Algo VPN Runner [x] CODE DONE — LIVE DROPLET DEPLOY PENDING
 
 **Duration:** 2 days
 
@@ -177,7 +226,12 @@ EOF
 
 ---
 
-## Step 9: Provider Credential Exchange
+## Step 9: Provider Credential Exchange [ ] PENDING — SCOPED
+
+> Scoping decision: implement in Step 9 only a thin provider layer
+> (`base.py` + `registry.py` + `digitalocean.py`) needed by Step 10. AWS/GCP/Azure
+> credential exchange moves to Step 13, where their OAuth flows are implemented
+> (their OAuth routes do not exist yet, so building exchange now is speculative).
 
 **Duration:** 2 days
 
@@ -432,13 +486,15 @@ volumes:
 
 ## Completion Checklist
 
-- [ ] Google OAuth login works
-- [ ] Dashboard shows servers
-- [ ] Can connect DigitalOcean via OAuth
-- [ ] Can enter Hetzner API key
-- [ ] Deploy form submits successfully
-- [ ] Worker picks up deployment job
-- [ ] Algo provisions VPN server
+Current state after Steps 1–8 (Steps 9+ not started):
+
+- [x] Google OAuth login works
+- [x] Dashboard shows servers
+- [ ] Can connect DigitalOcean via OAuth (code done, live E2E pending)
+- [ ] Can enter Hetzner API key (input exists in form; persistence path pending)
+- [ ] Deploy form submits successfully (creates records; no queue yet)
+- [ ] Worker picks up deployment job (skeleton only — no `/api/deploy` enqueue)
+- [ ] Algo provisions VPN server (runner done; live droplet deploy pending)
 - [ ] Config files downloadable
 - [ ] Can destroy server
 - [ ] Credentials encrypted at rest

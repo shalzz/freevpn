@@ -41,7 +41,7 @@ export default function LoginPage() {
           </p>
 
           <button
-            onClick={() => signIn("google")}
+            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
             style={{
               width: "100%",
               padding: "12px 24px",
